@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</title>
+</head>
+<body>
+<div id="ketqua"></div>
+<script>
+    let text1 = "";
+    for (let i = 1; i <= 100; i++) {
+        if (i%3==0 && i%5==0){
+            text1 = text1 + "Fizz-Buzz" + " " ;
+        }else if (i%5==0){
+            text1 = text1 + "Buzz" + " ";
+        }else if (i%3==0){
+            text1 = text1 + "Fizz" + " ";
+        }else{
+            text1 = text1 + i + " ";
+        }
+    }
+    document.getElementById("ketqua").innerText = text1;
+</script>
+</body>
+</html>

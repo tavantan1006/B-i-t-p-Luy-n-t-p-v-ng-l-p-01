@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<p>Nhâp khoảng số mà bạn muốn đoán : ví dụ : a = 1 ; b =10 ==> Khoảng số (1 --> 10 )</p>
+<label for="KhoangSo1"> Nhập số a: </label>
+<br>
+<input type="text" id="KhoangSo1">
+<br><br>
+<label for="KhoangSo2"> Nhập số b: </label>
+<br>
+<input type="text" id="KhoangSo2">
+<br><br>
+<input type="button" value="Chơi" onclick="gameshow()">
+<input type="button" value="Chơi lại">
+<p>Người chơi được đoán sai tối đa 3 lần !!</p>
+<p id="ketqua"></p>
+<script>
+
+  function gameshow(){
+    let a = +document.getElementById("KhoangSo1").value;
+    let b = +document.getElementById("KhoangSo2").value;
+    let nSoLanDoan = 3;
+    let check = true;
+    let count = 0;
+    let ranDom = Math.floor(Math.random() * b) + a;
+    alert(ranDom);
+    let soNguoiChoiDoan = +prompt("Nhập số bạn đoán : ");
+    while (count < 4){
+      if (ranDom != soNguoiChoiDoan && count <3){
+        if (ranDom > soNguoiChoiDoan){
+          alert("Số bạn đoán Nhỏ hơn số Random !! mời bạn đoán lại !");
+        }else {
+          alert("Số bạn đoán Lớn hơn số Random !! mời bạn đoán lại !");
+        }
+        soNguoiChoiDoan = +prompt("Bạn đoán sai rồi !! Cho bạn đoán lại lần nữa !! : ");
+        count ++;
+        check = false;
+      }else if (count > 2){
+        alert("Bạn sai quá sai rồi !! Tạm biệt nhé !!");
+        break;
+      }else{
+        alert("Đoán đúng rồi anh trai !!")
+        break;
+      }
+    }
+  }
+
+
+
+</script>
+</body>
+</html>

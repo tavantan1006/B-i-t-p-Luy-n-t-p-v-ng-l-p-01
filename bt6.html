@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</title>
+</head>
+<body>
+<label for="Vitri">Tính tổng của n số chia hết cho 7 đầu tiên trong các số tự nhiên.</label>
+<br><br><label for="Vitri"> Nhập n là :</label>
+<input type="text" id="Vitri">
+<input type="button" value="Hiển thị" onclick="Hienthi()">
+<div id="ketqua"></div>
+<script>
+  function Hienthi(){
+    let n = +document.getElementById("Vitri").value;
+    let tong = 0;
+    for (let i = 1; i <= n; i++) {
+        tong = tong + 7*i;
+    }
+    document.getElementById("ketqua").innerText ="Tổng của "+n+" số chia hết cho 7 đầu tiên là " + tong;
+  }
+
+</script>
+</body>
+</html>
